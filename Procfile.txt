@@ -1,0 +1,1 @@
+web: gunicorn nimsa_ga_2025.wsgi
