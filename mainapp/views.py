@@ -7,6 +7,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponse
 from .models import Donor
 
+def home(request):
+    return render(request, 'home.html')  # ✅ Make sure the file is named 'home.html'
+    
+
 @csrf_exempt
 def flutterwave_webhook(request):
     if request.method == 'POST':
