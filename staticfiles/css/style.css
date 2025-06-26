@@ -1,0 +1,108 @@
+body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(120deg, #e0f7fa 0%, #f9f9f9 100%);
+      color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 32px 0 rgba(0,0,0,0.08), 0 1.5px 6px 0 rgba(0,0,0,0.03);
+      padding: 48px 36px 36px 36px;
+      max-width: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 40px 0 rgba(0,0,0,0.13), 0 2px 8px 0 rgba(0,0,0,0.04);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -1px;
+      color: #00695c;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-bottom: 2.2rem;
+      color: #555;
+      letter-spacing: 0.5px;
+    }
+
+    #countdown {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      color: #009688;
+      background: #e0f2f1;
+      border-radius: 10px;
+      padding: 10px 0;
+      width: 100%;
+      box-sizing: border-box;
+      letter-spacing: 1px;
+    }
+
+    .donate-btn {
+      padding: 16px 0;
+      width: 100%;
+      font-size: 1.15rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #00bfae 0%, #00796b 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px 0 rgba(0,185,174,0.10);
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+    }
+
+    .donate-btn:hover, .donate-btn:focus {
+      background: linear-gradient(90deg, #00796b 0%, #00bfae 100%);
+      transform: translateY(-2px) scale(1.02);
+      outline: none;
+    }
+
+    .donate-btn:active {
+      transform: scale(0.98);
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        padding: 28px 8vw 24px 8vw;
+        max-width: 98vw;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+      #countdown {
+        font-size: 1.1rem;
+        padding: 7px 0;
+      }
+      .donate-btn {
+        font-size: 1rem;
+        padding: 12px 0;
+      }
+    }
