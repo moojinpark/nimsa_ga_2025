@@ -9,7 +9,7 @@ from .models import Donor
 
 def home(request):
     return render(request, 'home.html')  # ✅ Make sure the file is named 'home.html'
-    
+
 
 @csrf_exempt
 def flutterwave_webhook(request):
