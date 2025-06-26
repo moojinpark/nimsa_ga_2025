@@ -1,27 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const countdown = document.getElementById("countdown");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Event Page</title>
+    <!-- ...existing head code... -->
+    <style>
+      /* Unique countdown styling */
+      #countdown-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #f0f4ff;
+        border-radius: 1.5rem;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        padding: 2rem 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #countdown {
+        font-size: 2rem;
+        color: #2a3a5c;
+        letter-spacing: 1px;
+      }
+      #countdown strong {
+        color: #1e90ff;
+        font-weight: bold;
+        font-size: 2.2rem;
+      }
+    </style>
+</head>
+<body>
+  <!-- ...existing body code... -->
 
-  const eventDateUTC = Date.parse("2025-10-20T00:00:00Z"); // Oct 20, 2025 @ 00:00 UTC
+  <div id="countdown-container">
+    <span id="countdown">Loading countdown...</span>
+  </div>
 
-  const updateCountdown = () => {
-    const now = new Date().getTime();
-    const distance = eventDateUTC - now;
+  <!-- ...existing code... -->
 
-    if (distance < 0) {
-      countdown.innerHTML = "🎉 The event has started!";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdown.innerHTML = `⏳ Event starts in: <strong>${days}</strong> days <strong>${hours}</strong> hours <strong>${minutes}</strong> minutes <strong>${seconds}</strong> seconds`;
-  };
-
-  updateCountdown(); // Run immediately
-  setInterval(updateCountdown, 1000); // Then every second
-});
-
-<script src="/static/js/countdown.js?v=2"></script>
+  <!-- Place script at the end for best performance -->
+  <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+</body>
+</html>

@@ -1,9 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const countdown = document.getElementById("countdown");
+  if (!countdown) return;
 
-  const eventDateUTC = Date.parse("2025-10-20T00:00:00Z"); // Oct 20, 2025 @ 00:00 UTC
+  // Set your event date here (UTC)
+  // Example: 2025-06-01T12:00:00Z => Date.UTC(2025, 5, 1, 12, 0, 0)
+  const eventDateUTC = new Date(Date.UTC(2025, 5, 1, 12, 0, 0)).getTime();
 
-  const updateCountdown = () => {
+  function updateCountdown() {
     const now = new Date().getTime();
     const distance = eventDateUTC - now;
 
@@ -18,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     countdown.innerHTML = `⏳ Event starts in: <strong>${days}</strong> days <strong>${hours}</strong> hours <strong>${minutes}</strong> minutes <strong>${seconds}</strong> seconds`;
-  };
+  }
 
   updateCountdown(); // Run immediately
   setInterval(updateCountdown, 1000); // Then every second
